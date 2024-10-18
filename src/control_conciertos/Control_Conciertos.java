@@ -6,7 +6,7 @@ package control_conciertos;
 
 /**
  *
- * @author dam2
+ * @author Nicoleta
  */
 public class Control_Conciertos {
 
@@ -14,7 +14,7 @@ public class Control_Conciertos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        System.out.println("Hola");
     }
     
 }
