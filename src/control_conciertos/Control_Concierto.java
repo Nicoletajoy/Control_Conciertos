@@ -4,6 +4,13 @@
  */
 package control_conciertos;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
+
 /**
  *
  * @author Nicoleta
@@ -15,6 +22,14 @@ public class Control_Concierto extends javax.swing.JFrame {
      */
     public Control_Concierto() {
         initComponents();
+        
+         manejadorClicks Co = new  manejadorClicks();
+         manejadorComponentes Con = new manejadorComponentes();
+         this.addComponentListener((ComponentListener) Co);
+         this.addWindowListener((WindowListener) Con);
+        
+         manejadorClicks CClick = new manejadorClicks();
+         btnAceptar.addActionListener(CClick);
     }
 
     /**
@@ -27,6 +42,7 @@ public class Control_Concierto extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
+        btnAceptar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,13 +51,21 @@ public class Control_Concierto extends javax.swing.JFrame {
         jLabel1.setText("*Control_Concierto*");
         jLabel1.setBorder(javax.swing.BorderFactory.createMatteBorder(2, 2, 2, 2, new java.awt.Color(0, 102, 102)));
 
+        btnAceptar.setFont(new java.awt.Font("Segoe UI Semibold", 0, 12)); // NOI18N
+        btnAceptar.setText("Aceptar");
+        btnAceptar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(57, 57, 57)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(82, 82, 82)
+                        .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(73, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -49,48 +73,90 @@ public class Control_Concierto extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(243, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(160, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Control_Concierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Control_Concierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Control_Concierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Control_Concierto.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Control_Concierto().setVisible(true);
-            }
-        });
-    }
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAceptar;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
+}
+class manejadorClicks  implements ActionListener{
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        System.out.println(e.getActionCommand()); 
+        System.out.println("Se ha pulsado el boton ");
+    }
+    
+}
+class manejadorComponentes implements ComponentListener{
+
+    @Override
+    public void componentResized(ComponentEvent e) {
+        System.out.println("Cambia tamaño");
+    }
+
+   
+    @Override
+    public void componentMoved(ComponentEvent e) {
+        System.out.println("Se ha movido");
+    }
+
+
+    @Override
+    public void componentShown(ComponentEvent e) {
+        System.out.println("Se muestra los componentes");
+    }
+
+    @Override
+    public void componentHidden(ComponentEvent e) {
+        System.out.println("Se ha ocultado");
+    }
+    
+}
+class manejadorVentana implements WindowListener{
+
+    @Override
+    public void windowOpened(WindowEvent e) {
+        System.out.println("Se abre la ventana");
+    }
+
+    @Override
+    public void windowClosing(WindowEvent e) {
+        System.out.println("Cerrando la ventana");
+    }
+
+    @Override
+    public void windowClosed(WindowEvent e) {
+        System.out.println("Cerrado");
+    }
+
+    @Override
+    public void windowIconified(WindowEvent e) {
+        System.out.println("Se ha iconizando");
+    }
+
+    @Override
+    public void windowDeiconified(WindowEvent e) {
+       System.out.println("Se ha deziconizando");
+    }
+
+    @Override
+    public void windowActivated(WindowEvent e) {
+        System.out.println("Se activa la ventana");
+    }
+
+    @Override
+    public void windowDeactivated(WindowEvent e) {
+        System.out.println("Se ha desactivado la ventana");
+    }
+
 }

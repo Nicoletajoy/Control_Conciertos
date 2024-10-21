@@ -15,7 +15,13 @@ public class Control_Conciertos {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println("Hola");
+         System.out.println("Hola");
+         System.out.println("Iniciando.....");
+        
+         Control_Conciertos Con =new Control_Conciertos();
+        
     }
+
+    
     
 }
