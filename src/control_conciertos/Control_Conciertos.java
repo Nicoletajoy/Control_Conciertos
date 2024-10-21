@@ -5,7 +5,8 @@
 package control_conciertos;
 
 /**
- *
+ * metodo Main del proyecto
+ * 21/10/2024
  * @author Nicoleta
  */
 public class Control_Conciertos {
