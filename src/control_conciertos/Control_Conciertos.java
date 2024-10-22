@@ -18,8 +18,8 @@ public class Control_Conciertos {
          System.out.println("Hola");
          System.out.println("Iniciando.....");
         
-         Control_Conciertos Con =new Control_Conciertos();
-        
+         Control_Concierto Con =new Control_Concierto();
+          Con.setVisible(true);
     }
 
     
