@@ -8,6 +8,6 @@ package control_conciertos;
  *Modelo del proyecto
  * @author Nicoleta
  */
-public class ModeloControl_Conciertos {
+public class MiModelo_Concierto {
     
 }

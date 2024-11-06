@@ -8,6 +8,6 @@ package control_conciertos;
  *El jefe del proyecto
  * @author Nicoleta
  */
-public class BossControl_Conciertos {
+public class JefeControl {
     
 }

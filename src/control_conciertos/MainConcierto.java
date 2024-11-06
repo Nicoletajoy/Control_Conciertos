@@ -9,7 +9,7 @@ package control_conciertos;
  * 21/10/2024
  * @author Nicoleta
  */
-public class Control_Conciertos {
+public class MainConcierto {
 
     /**
      * @param args the command line arguments
@@ -18,7 +18,7 @@ public class Control_Conciertos {
          System.out.println("Hola");
          System.out.println("Iniciando.....");
         
-         Control_Concierto Con =new Control_Concierto();
+         VistaConcierto Con =new VistaConcierto();
           Con.setVisible(true);
     }
 
