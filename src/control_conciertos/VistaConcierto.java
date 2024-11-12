@@ -10,6 +10,7 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,11 +18,17 @@ import java.awt.event.WindowListener;
  */
 public class VistaConcierto extends javax.swing.JFrame {
 
+   
+    
+  
     /**
      * Vista del proyecto
      */
     public VistaConcierto() {
         initComponents();
+        
+     
+         
     }
         /* manejadorVentana Co = new manejadorVentana();
          manejadorComponentes Con = new manejadorComponentes();
@@ -41,35 +48,22 @@ public class VistaConcierto extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        FotoPagina = new javax.swing.JLabel();
-        TituloEntrada = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        FotoPagina.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Diseño sin título.png"))); // NOI18N
+        jLabel1.setText("jLabel1");
+        getContentPane().add(jLabel1, java.awt.BorderLayout.PAGE_END);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FotoPagina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(FotoPagina, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("ENTRADA");
+        getContentPane().add(jLabel2, java.awt.BorderLayout.PAGE_START);
 
+        jPanel1.setLayout(new java.awt.GridBagLayout());
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
-
-        TituloEntrada.setBackground(new java.awt.Color(139, 179, 204));
-        TituloEntrada.setFont(new java.awt.Font("Scheherazade", 3, 36)); // NOI18N
-        TituloEntrada.setForeground(new java.awt.Color(0, 0, 204));
-        TituloEntrada.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        TituloEntrada.setText("Pilla Tu Entrada");
-        TituloEntrada.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 0, 51), 1, true));
-        TituloEntrada.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
-        getContentPane().add(TituloEntrada, java.awt.BorderLayout.PAGE_START);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -77,8 +71,8 @@ public class VistaConcierto extends javax.swing.JFrame {
    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FotoPagina;
-    private javax.swing.JLabel TituloEntrada;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 
