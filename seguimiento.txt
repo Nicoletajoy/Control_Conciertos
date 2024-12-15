@@ -13,3 +13,13 @@ Sí hay label, quita el resto.
 -> Refactoriza (cambia) los nombres de todas las clases y objetos que uses de forma que sean exclusivos tuyos y del proyecto (en el futuro no evaluaré nada con nombres genéricos automatizados).
 -> Modifica el README.md donde sea más más más explicativo sobre el objetivo del proyecto.
 -> Un único "main" en todo el proyecto.
+
+2º modificación:
+Tienes que arreglarlo para que sea un auténtico MVC funcional.
+README.md ¿vacío?  Explica en él tu proyecto.
+Elimina la imagen (en el sentido de ser usada guía del look, retoca la imagen ya sin botones será tu fondo en los paneles principales), y debes tener 4 ventanas (una es el JDialog):
+1-> presentación, no redimensionable (tamaño mediano), simulando la carga, y desaparece por tiempo.
+2-> Salta el JFrame de login, con el usuario Administardor por defecto
+3-> Entrando como Administrador "su" principal. Con menú funcional en el sentido de mandar un mensaje por consola, y usar "Ajustes" con una opción configuración que lanza un JDialog modificado. Donde se controla los cambios del look y los detalles del concierto, y debe poder cargar los datos guardados en el arranque.
+Todo los métodos y clases documentados.
+
