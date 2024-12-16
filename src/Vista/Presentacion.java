@@ -25,7 +25,8 @@ public class Presentacion extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setUndecorated(true); 
         JLabel label = new JLabel("Cargando...", SwingConstants.CENTER);
-        label.setFont(new Font("Arial", Font.BOLD, 24)); add(label);
+        label.setFont(new Font("Arial", Font.BOLD, 24));
+        add(label);
         Timer timer = new Timer(3000, e -> { 
             dispose();
             new Login().setVisible(true); 
