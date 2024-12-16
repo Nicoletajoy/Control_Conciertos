@@ -18,7 +18,7 @@ import javax.swing.JTextField;
 
 
 /**
- *
+ *Clase ConfiguracionDialog
  * @author Ioana
  */
 public class ConfiguracionDialog extends JDialog { 
@@ -26,6 +26,10 @@ public class ConfiguracionDialog extends JDialog {
  private JTextField txtLookAndFeel;
  private JTextField txtDetallesConcierto;
 
+ /** 
+  * Constructor de la clase ConfiguracionDialog. 
+  * @param parent la ventana principal que invoca este diálogo.
+  */
 public ConfiguracionDialog(JFrame parent) {
     super(parent, "Configuración", true);
     setSize(400, 300); 
@@ -53,9 +57,12 @@ public ConfiguracionDialog(JFrame parent) {
     panel.add(btnGuardar);
     add(panel);
     
-} /** * Cambia el color de fondo de la ventana principal. 
- * * @param parent la ventana principal.
- * @param color el color seleccionado. */ 
+}
+/** 
+    * Cambia el color de fondo de la ventana principal. 
+    * @param parent la ventana principal.
+    * @param color el color seleccionado. 
+    */ 
 private void cambiarColorFondo(JFrame parent, String color) {
     switch (color) {
     case "Blanco": parent.getContentPane().setBackground(Color.WHITE);
