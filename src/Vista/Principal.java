@@ -10,6 +10,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 
 
 
@@ -17,26 +18,74 @@ import javax.swing.JMenuItem;
  *
  * @author Ioana
  */
-public class Principal extends JFrame {
+public class Principal extends JFrame { 
     
-    public Principal() {
-        setTitle("Principal"); 
-        setSize(600, 400); 
-        setLocationRelativeTo(null); 
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JMenuBar menuBar = new JMenuBar(); 
-        JMenu menuArchivo = new JMenu("Archivo"); 
-        JMenuItem itemAjustes = new JMenuItem("Ajustes"); 
-        itemAjustes.addActionListener(new ActionListener() {
-            @Override 
-            public void actionPerformed(ActionEvent e) {
-                new ConfiguracionDialog(Principal.this).setVisible(true);
-            } 
-        });
-        menuArchivo.add(itemAjustes); 
-        menuBar.add(menuArchivo);
-        setJMenuBar(menuBar);
-    } 
+    public Principal() { 
+        setTitle("Principal");
+    
+ // Establece el título de la ventana 
+setSize(600, 400);
+// Establece el tamaño de la ventana 
+setLocationRelativeTo(null);
+// Centra la ventana en la pantalla 
+setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+// Configura la operación de cierre 
+// Crea la barra de menú 
+JMenuBar menuBar = new JMenuBar();
+// Crea el menú "Archivo" 
+JMenu menuArchivo = new JMenu("Archivo");
+// Crea el ítem de menú "Ajustes" 
+JMenuItem itemAjustes = new JMenuItem("Ajustes");
+itemAjustes.addActionListener(new ActionListener() {
+@Override
+public void actionPerformed(ActionEvent e) {
+new ConfiguracionDialog(Principal.this).setVisible(true); 
+} 
+});
+// Añade el ítem "Ajustes" al menú "Archivo"
+menuArchivo.add(itemAjustes);
+// Añade el menú "Archivo" a la barra de menú 
+menuBar.add(menuArchivo);
+// Crea el menú "Editar" 
+JMenu menuEditar = new JMenu("Editar"); 
+// Crea el ítem de menú "Copiar" 
+JMenuItem itemCopiar = new JMenuItem("Copiar");
+itemCopiar.addActionListener(new ActionListener() { 
+@Override
+public void actionPerformed(ActionEvent e) {
+System.out.println("Copiar seleccionado");
+}
+}); 
+// Crea el ítem de menú "Pegar" 
+JMenuItem itemPegar = new JMenuItem("Pegar"); 
+itemPegar.addActionListener(new ActionListener() {
+@Override
+public void actionPerformed(ActionEvent e) {
+System.out.println("Pegar seleccionado");
+}
+});
+// Añade los ítems "Copiar" y "Pegar" al menú "Editar" 
+menuEditar.add(itemCopiar);
+menuEditar.add(itemPegar); 
+// Añade el menú "Editar" a la barra de menú 
+menuBar.add(menuEditar); 
+// Crea el menú "Ayuda" 
+JMenu menuAyuda = new JMenu("Ayuda");
+// Crea el ítem de menú "Acerca de" 
+JMenuItem itemAcercaDe = new JMenuItem("Acerca de");
+itemAcercaDe.addActionListener(new ActionListener() {
+@Override 
+public void actionPerformed(ActionEvent e) {
+JOptionPane.showMessageDialog(Principal.this, "Control de Conciertos por Ioana", "Acerca de", JOptionPane.INFORMATION_MESSAGE); 
+} 
+});
+// Añade el ítem "Acerca de" al menú "Ayuda"
+menuAyuda.add(itemAcercaDe); 
+// Añade el menú "Ayuda" a la barra de menú
+menuBar.add(menuAyuda); 
+// Establece la barra de menú en la ventana principal 
+setJMenuBar(menuBar); 
+} 
 }
     
 
